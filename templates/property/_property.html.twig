@@ -1,0 +1,18 @@
+<div class="card mb-4">
+{% if property.fileName %}
+
+<img src="{{ vich_uploader_asset(property , 'imageFile')  }}" alt="card-img-top" style="width=100%; height:auto;">
+{% endif %}
+
+	<div class="card-body">
+		<h5 class="card-title">
+			<a href="{{path ('property.show' , {id : property.id , slug : property.slug})}}">{{property.title}}</a>
+		</h5>
+		<p class="card-text">{{property.city}}
+			({{property.postalCode}})
+		</p>
+		<div class="text-primary" style=" font-weight : bold ; font-size : 2rem;">{{property.formatPrice}}
+			€</div>
+	</div>
+
+</div>
